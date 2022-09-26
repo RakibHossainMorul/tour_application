@@ -5,7 +5,8 @@ import 'package:tour_application/const/app_colors.dart';
 
 class violetButton extends StatelessWidget {
   String buttonText;
-  violetButton(this.buttonText);
+  final Function onAction;
+  violetButton(this.buttonText, this.onAction);
   RxBool _value = false.obs;
   @override
   Widget build(BuildContext context) {
@@ -13,6 +14,7 @@ class violetButton extends StatelessWidget {
       () => InkWell(
         onTap: () {
           _value.value = true;
+          onAction();
         },
         child: Container(
             height: 46.h,

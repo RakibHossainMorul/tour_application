@@ -51,14 +51,15 @@ class signUpScreen extends StatelessWidget {
                   decoration: appStyle.textFieldDecoration("E-mail Address"),
                 ),
                 TextFormField(
-                  controller: _emailController,
+                  controller: _passwordController,
                   keyboardType: TextInputType.text,
                   decoration: appStyle.textFieldDecoration("Enter Password"),
                 ),
                 SizedBox(
                   height: 40.h,
                 ),
-                violetButton("Create Account"),
+                violetButton(
+                    "Create Account", () => Get.toNamed(userFormRoute)),
                 SizedBox(
                   height: 10.h,
                 ),
